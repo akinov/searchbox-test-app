@@ -1,5 +1,11 @@
 class Post < ApplicationRecord
   searchkick settings: {
-    index: { max_ngram_diff: 1 }
+    analysis: {
+      filter: {
+        searchkick_ngram: {
+          max_gram: 2
+        }
+      }
+    }
   }
 end
