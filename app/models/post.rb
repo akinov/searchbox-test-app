@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     analysis: {
       filter: {
         searchkick_suggest_shingle: {
-          max_shingle_size: MIN_SHINGLE_SIZE,
+          min_shingle_size: MIN_SHINGLE_SIZE,
           max_shingle_size: MIN_SHINGLE_SIZE + 3
         },
         searchkick_ngram: {
