@@ -1,10 +1,10 @@
 class Post < ApplicationRecord
   searchkick settings: {
-    index: { 
-      max_shingle_diff: 3 
-    },
     analysis: {
       filter: {
+        searchkick_suggest_shingle: {
+          max_shingle_size: 4
+        },
         searchkick_ngram: {
           max_gram: 2
         }
