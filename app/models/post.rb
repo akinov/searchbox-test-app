@@ -1,16 +1,16 @@
 class Post < ApplicationRecord
-  min_shingle_size = 1
-  min_gram = 1
+  MIN_SHINGLE_SIZE = 1.freeze
+  MIN_GRAM = 1.freeze
   searchkick settings: {
     analysis: {
       filter: {
         searchkick_suggest_shingle: {
-          max_shingle_size: min_shingle_size,
-          max_shingle_size: min_shingle_size + 3
+          max_shingle_size: MIN_SHINGLE_SIZE,
+          max_shingle_size: MIN_SHINGLE_SIZE + 3
         },
         searchkick_ngram: {
-          min_gram: min_gram,
-          max_gram: min_gram + 1
+          min_gram: MIN_GRAM,
+          max_gram: MIN_GRAM + 1
         }
       }
     }
